@@ -1,0 +1,157 @@
+{% extends "preprocess_module/base.html" %}
+
+{% load staticfiles %}
+
+{% block header %}
+    <script src="{% static 'preprocess_module/js/upload.js' %}" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'preprocess_module/css/upload.css' %}">
+{% endblock %}
+
+{% block content %}
+    <!-- <head> This is a Helper Page for Users</head> -->
+    <body> 
+        <div class="row">
+            <div class="wide-card card help-txt">
+                <h2>Workflow Diagram</h2>
+                <p> </p>
+                <img src="{% static 'image/workflow.png' %}" alt="dashboard-3" width="900" height="500">   
+        </div>
+    </div>
+        <div class="row">
+            <div class="wide-card card help-txt">
+            <h2>Preprocess Tab</h2>
+            <p>
+                Upload data for Injury prediction training.
+            </p>
+            <P>
+                <b>Question: What file type should I choose while uploading the file and which checkbox should I choose?</b><br>
+                <b>Answer: </b>If the file is QCEW data, please choose Employment. If the file is WCAIS data, choose All Industries. Common Wealth is not recommended.<br>
+            </P>
+            <p>
+                <b>Question: What can I do if I fail to upload the file? </b> <br>
+                <b>Answer: </b>You may want to click the tab “Show Log” to get more information. <br>
+                <p>Check the file columns before uploading, make sure you have the following columns correctly spelt:
+                FINAL NAICS, CLAIM_NUMBER, EMPLR_PHY_POSTAL_CD, EMPL_MLNG_POSTAL_CD, INJURY_CAUSE_CD, INJURY_NATURE_CD, DT_OF_INJURY. <br>
+                <i>DT_OF_INJURY</i>  should be in date format. Other columns should be in text format.</p>
+            </p>
+            <P>
+                <b>Question: Can I delete some data in the database?</b><br>
+                <b>Answer: </b>Yes. Just click the red X button for each upload task.<br>
+            </P>
+            </div>
+        </div>
+        <div class="row">
+            <div class="wide-card card help-txt">
+            <h2>Prediction Tab</h2>
+            <p>
+                Use data uploaded in the Preprocess Tab, select between two different prediction models and predict future injury rates for each industry level and county level.
+            </p>
+            <P>
+                <b>Question: What file type should I choose while making predictions?</b><br>
+                <b>Answer: </b> Please select All Industries type. Common Wealth type is not recommended.<br>  
+            </P>
+            <P>
+                <b>Question: What are the start date and end date for?</b><br>
+                <b>Answer: </b>The start date and end date are for the time range of training data.  <br>
+            </P>
+            <P>
+                <b>Question: How long should I choose for the time range of training data?</b><br>
+                <b>Answer: </b>The time range of training data should be no less than 2 years to reach a good accuracy. <br>
+                Note that you need to upload the corresponding WACIS data and Employment data in the Preprocess Tab First.<br>
+            </P>
+            <P>
+                <b>Question: What is the time range for the prediction data?</b><br>
+                <b>Answer: </b>The default prediction time range is 36 months ahead from the end data you choose.<br>
+            </P>
+            <P>
+                <b>Question: What prediction model can I use?</b><br>
+                <b>Answer: </b>Currently there are two prediction models, Prophet and SARIMAX, you can run both models and compare the results.<br>
+            </P>
+            <P>
+                <b>Question: What is NAICS Level selection for?</b><br>
+                <b>Answer: </b>You can select individual levels of NAICS industry based on their code number and run prediction models sepeately. <br>
+            </P>
+            <P>
+                <b>Question: Can I delete some data in the database?</b><br>
+                <b>Answer: </b>Yes. Just click the red X button for each prediction task. It will delete the prediction task record and result from database.<br>
+            </P>
+            <P>
+                <b>Question: What can I put in the Note text box?</b><br>
+                <b>Answer: </b>You can put anything you want to add or tag for the current prediction, 
+                it will be shown beside the Type text if you have your mouse hovering the text bubble.
+                It will also be stored in prediction task table in database.<br>
+            </P>
+            <P>
+                <b>Question: How long will the prediction process lasts?</b><br>
+                <b>Answer: </b>You can click "Show Log" under Log and check progress bar to see how much work has been finished. <br>
+            </P>
+        </div>
+    </div>
+        <div class="row">
+            <div class="wide-card card help-txt">
+            <h2>Stats Tab</h2>
+            <p>
+                Demonstrate prediction models running status.
+            </p>
+            <P> 
+                <b>Question: What is this page for?</b><br>
+                <b>Answer: </b>This page shows basic status information of prediction model result and the summary of it.<br>
+            </P>
+        </div>
+    </div>
+        <div class="row">
+            <div class="wide-card card help-txt">
+            <h2>Power BI Tab</h2>
+            <p>
+                Once a prediction task is finished, the prediction output will be displayed in the Power BI report.
+            </p>
+            <h4 style="margin-left: 40px">Filter Area</h4>
+            <p>
+                <img src="{% static 'image/powerBI1.png' %}" alt="dashboard-1" width="670" height="230">
+            </p>
+            <p>
+                <ol>
+                    <li><b>task_id: </b>only one task is allowed. The max task_id is the most recent result. </li>
+                    <li><b>display range: </b>Users can select the time range to display on the dashboard.</li>
+                    <li><b>naics_code: </b>Users can pick the specific industries.</li>
+                    <li><b>naics_level: </b>Users can pick the specific industry level to view the result.</li>
+                    <li><b>county: </b>Users can choose the counties.</li>
+                  </ol>
+            </p>
+            <p>
+                <b>Question: How can I make selections to display?</b><br>
+                <b>Answer: </b> You have the flexibility to make a selection using the following slicers.
+            </p>
+            <p>
+                <b>Question: Can I select more than one item in one slicer?</b><br>
+                <b>Answer: </b> Yes you can, except for the task_id. For multi-selection, type CONTROL+SHIFT/COMMAND+SHIFT. Then select the items you want. 
+            </p>
+            <p>
+                <b>Question: How can I change back to the default setting for each slicer?</b><br>
+                <b>Answer: </b> Hover your mouse on the slicer. Then an eraser logo will show up. Next, click the eraser and it will change back to the default setting.
+            </p>
+            <p>
+                <img src="{% static 'image/powerBI2.png' %}" alt="dashboard-2" width="300" height="100">
+            </p>
+            <h4 style="margin-left: 40px">Power BI Plot</h4>
+            <p>
+                <b>Question: Can I view the tooltips?</b><br>
+                <b>Answer: </b>Yes, you can. Simply hover your mouse on the data point you are interested in.
+            </p>
+            <p>
+                <b>Question: Can I view the average annual rate or average monthly rate?</b><br>
+                <b>Answer: </b>Yes, you can. Hover your mouse on the plot and arrows will show up in the right top corner. To view the average injury rate for every year, click arrow 1 then arrow 2.  To view the average injury rate for every month, click arrow 1 then arrow 3.  
+            </p>
+            <p>
+                <img src="{% static 'image/powerBI3.png' %}" alt="dashboard-3" width="500" height="250">
+            </p>
+        </div>
+    </div>
+        <div class="row">
+            <div class="wide-card card help-txt">
+                <p> For other instructions, please refer to the tutorial video.</p>
+                <li><a target=”_blank” href="https://youtu.be/xsFJB-8iWn4">Tutorial</a></li>
+        </div>
+    </div>
+    </body>
+{% endblock %}

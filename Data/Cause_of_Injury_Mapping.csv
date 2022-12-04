@@ -1,0 +1,77 @@
+﻿Code,Description,Category,Score
+1,Chemicals,Burn or Scaled - Heat or Cold Exposures- Contact Witih,7
+2,Hot Objects or Substances,Burn or Scaled - Heat or Cold Exposures- Contact Witih,8
+3,Temperature Extremes,Burn or Scaled - Heat or Cold Exposures- Contact Witih,6
+4,Fire or Flame,Burn or Scaled - Heat or Cold Exposures- Contact Witih,7
+5,Steam or Hot Fluids,Burn or Scaled - Heat or Cold Exposures- Contact Witih,6
+6,"Dust, Gases, Fumes or Vapors",Burn or Scaled - Heat or Cold Exposures- Contact Witih,7
+7,Welding Operation,Burn or Scaled - Heat or Cold Exposures- Contact Witih,7
+8,Radiation,Burn or Scaled - Heat or Cold Exposures- Contact Witih,6
+9,"Contact With, NOC",Burn or Scaled - Heat or Cold Exposures- Contact Witih,5
+10,Machine or Machinery,Caught In Under or Between,7
+11,Cold Objects or Substances,Burn or Scaled - Heat or Cold Exposures- Contact Witih,6
+12,Object Handled,Caught In Under or Between,8
+13,"Caught In, Under or Between, NOC",Caught In Under or Between,8
+14,Abnormal Air Pressure,Burn or Scaled - Heat or Cold Exposures- Contact Witih,6
+15,Broken Glass,"Cut, Puncture, Scrape Injured By",4
+16,"Hand Tool, Utensil; Not Powered","Cut, Puncture, Scrape Injured By",7
+17,Object Being Lifted or Handled,"Cut, Puncture, Scrape Injured By",5
+18,"Powered Hand Tool, Appliance","Cut, Puncture, Scrape Injured By",7
+19,"Cut, Puncture, Scrape, NOC","Cut, Puncture, Scrape Injured By",4
+20,Collapsing Materials (Slides of Earth),Caught In Under or Between,6
+25,From Different Level (Elevation),"Fall, Slip or Trip Injury",3
+26,From Ladder or Scaffolding,"Fall, Slip or Trip Injury",5
+27,From Liquid or Grease Spills,"Fall, Slip or Trip Injury",6
+28,Into Openings,"Fall, Slip or Trip Injury",4
+29,On Same Level,"Fall, Slip or Trip Injury",6
+30,"Slip, or Trip, Did Not Fall","Fall, Slip or Trip Injury",4
+31,"Fall, Slip or Trip, NOC","Fall, Slip or Trip Injury",7
+32,On Ice or Snow,"Fall, Slip or Trip Injury",7
+33,On Stairs,"Fall, Slip or Trip Injury",4
+40,Crash of Water Vehicle,Motor Vehicle,6
+41,Crash of Rail Vehicle,Motor Vehicle,8
+45,Colision or Sideswipe With Another Vehicle,Motor Vehicle,6
+46,Collision with a Fixed Object,Motor Vehicle,6
+47,Crash of Airplane,Motor Vehicle,7
+48,Vehicle Upset,Motor Vehicle,8
+50,"Motor Vehicle, NOC",Motor Vehicle,6
+52,Continual Noise,Strain or Injury By,2
+53,Twisting,Strain or Injury By,4
+54,Jumping or Leaping,Strain or Injury By,5
+55,Holding or Carrying,Strain or Injury By,6
+56,Lifting,Strain or Injury By,4
+57,Pushing or Pulling,Strain or Injury By,7
+58,Reaching,Strain or Injury By,7
+59,Using Tool or Machinery,Strain or Injury By,5
+60,"Strain by Injury By, NOC",Strain or Injury By,4
+61,Wielding or Throwing,Strain or Injury By,3
+65,Moving Part of Machine,Striking Against or Stepping On,8
+66,Object Being Lifted or Handled,Striking Against or Stepping On,7
+67,"Sanding, Scraping, Cleaning Operation",Striking Against or Stepping On,6
+68,Stationary Object,Striking Against or Stepping On,5
+69,Stepping on Shart Object,Striking Against or Stepping On,4
+70,"Striking Against or Stepping On, NOC",Striking Against or Stepping On,7
+74,"Fellow Worker, Paitent or Other Person",Struck or Injured By,5
+75,Falling or Flying Object,Struck or Injured By,6
+76,Hand Tool or Machine in Use,Struck or Injured By,5
+77,Motor Vehicle,Struck or Injured By,7
+78,Moving Parts of Machine,Struck or Injured By,7
+79,Object Being Lifted or Handled,Struck or Injured By,6
+80,Object Handled By Others,Struck or Injured By,5
+81,"Struck or Injured, NOC",Struck or Injured By,4
+82,"Absorption, Ingestion or Inhalation, NOC",Miscellaneous Causes,6
+84,Electrical Current,Burn or Scaled - Heat or Cold Exposures- Contact Witih,5
+85,Animal or Insect,Struck or Injured By,6
+86,Explosion or Flare Back,Struck or Injured By,5
+87,Foreign Matter (Body) in Eye(s),Miscellaneous Causes,4
+88,Natural Disasters,Miscellaneous Causes,5
+89,Person in Act of a Crime,Miscellaneous Causes,7
+90,Other Than Physical Cause of Injury,Miscellaneous Causes,4
+91,Mold,Miscellaneous Causes,6
+93,Gunshot,Miscellaneous Causes,8
+94,Repetitive Motion,Rubbed or Abraded By,4
+95,"Rubbed or Abbraded, NOC",Rubbed or Abraded By,5
+96,Terrorism,Miscellaneous Causes,6
+97,Repetitive Motion,Strain or Injury By,4
+98,"Cumulative, NOC",Miscellaneous Causes,4
+99,"Other - Miscellaneous, NOC",Miscellaneous Causes,4

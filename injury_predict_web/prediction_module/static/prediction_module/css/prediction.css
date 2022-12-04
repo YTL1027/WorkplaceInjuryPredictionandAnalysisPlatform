@@ -1,0 +1,159 @@
+.upload-module * {
+    margin: 12px;
+}
+
+.upload-module {
+    width: 100%;
+    height: 400px;
+    float: left;
+}
+
+.summary {
+    float: left;
+    width: 40%;
+    height: 400px;
+    display: block;
+}
+
+.row-chart {
+    float: left;
+    width: 100%;
+    height: 400px;
+    display: block;
+}
+
+.full-card {
+    height: 625px;
+    width: 100%;
+    display: block;
+}
+
+.input-card {
+    padding: 20px;
+    float: left;
+    width: 95%;
+}
+
+.task-table {
+    padding: 20px;
+    float: left;
+    width: 95%;
+}
+
+.modal-content {
+    width: 100%;
+}
+
+.icon {
+    width: 10px;
+    top: -7px;
+    position: relative;
+}
+
+.summary-left {
+    width: 30%;
+}
+
+.summary-right {
+    width: 70%;
+    float: left;
+}
+
+.summary-card {
+    box-shadow: 0 1px 5px #d8d8d8;
+    margin: 20px 15px;
+    width: 90%;
+    height: 60px;
+    float: left;
+
+}
+
+.summary-header {
+    text-align: center;
+    margin-top: 12px;
+}
+
+.summary-name {
+    float: left;
+    width: 40%;
+    height: 100%;
+    max-height: 100%;
+    font-weight: 300;
+    position: relative;
+}
+
+.chart-container{
+    width: 50%;
+    text-align: center;
+}
+
+canvas {
+    width: 95% !important;
+    height: 380px !important;
+    margin: 0 auto;
+}
+
+.center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+}
+
+.summary-data {
+    float: left;
+    width: 40%;
+    height: 100%;
+    text-align: center;
+    line-height: 60px;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+#message {
+    position: relative;
+    bottom: 30px;
+    color: red;
+    background-color: white;
+}
+
+.red {
+    background-color: #f88781;
+}
+
+.green {
+    background-color: #32bc9f;
+}
+
+.blue {
+    background-color: #70b3e3;
+}
+
+.yellow {
+    background-color: #ffdc68;
+}
+
+.bordered-table table, .bordered-table th, .bordered-table td {
+  border: 1px solid black;
+}
+
+.summary-table {
+    width: 90%;
+    height: 300px;
+    margin: 0 auto;
+    margin-top: 20px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.left-input {
+    width: 45%;
+    float: left;
+}
+.right-input {
+    width: 45%;
+    float: right;
+}

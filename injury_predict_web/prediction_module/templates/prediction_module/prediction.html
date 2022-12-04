@@ -1,0 +1,195 @@
+{% extends "preprocess_module/base.html" %}
+
+{% load staticfiles %}
+
+{% block header %}
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+    <script src="{% static 'prediction_module/js/prediction.js' %}" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'preprocess_module/css/base.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'prediction_module/css/prediction.css' %}">
+    <script type="text/javascript">naics_data = {{ naics_data|safe }};</script>
+{% endblock %}
+
+{% block content %}
+    <div class="input-card card">
+        <form id="predict_form" method="POST">
+            <div class="row m-3">
+                <h3>Run New Prediction Task</h3>
+            </div>
+            <div class="row m-2">
+            <div class="col">
+                <div class="form-group row">
+                    <label for="prediction_type" class="col-sm-4 col-form-label">Type</label>
+                    <select name="prediction_type" id="prediction_type" class="col-sm-8 form-control">
+                        <option value="Commonwealth">Commonwealth</option>
+                        <option value="Non-Commonwealth" selected>All Industries</option>
+                    </select>
+                </div>
+                <div class="form-group row">
+                    <label for="start_date" class="col-sm-4 col-form-label">Start Date</label>
+                    <input type="text" name="start_date" id="start_date" class="col-sm-8 form-control">
+                </div>
+                <div class="form-group row">
+                    <label for="end_date" class="col-sm-4 col-form-label">End Date</label>
+                    <input type="text" name="end_date" id="end_date" class="col-sm-8 form-control">
+                </div>
+                <div class="form-group row">
+                    <label for="note" class="col-sm-4 col-form-label">Note</label>
+                    <textarea class="col-sm-8 form-control" name="note" id="note" rows="2"></textarea>
+                    <!--<input type="text" name="note" id="note" class="col-sm-8 form-control">-->
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group row">
+                    <label for="model_type" class="col-sm-4 col-form-label">Model</label>
+                    <select name="model_type" id="model_type" class="col-sm-8 form-control">
+                        <option value="Prophet" selected>Prophet</option>
+                        <option value="SARIMAX">SARIMAX</option>
+                    </select>
+                </div>
+                <div class="form-group row">
+                    <label for="county_selector" class="col-sm-4 col-form-label">Counties</label>
+                    <select class="col-sm-8 form-control selectpicker" data-live-search="true" data-selected-text-format="count" multiple data-actions-box="true" id="county_selector">
+                      {% for county in county_data %}
+                        <option >{{county}}</option>
+                      {% endfor %}
+                    </select>
+                </div>
+                <div class="form-group row">
+                    <label for="severity" class="col-sm-4 col-form-label">Severity</label>
+                    <select id="severity" name="severity">
+                        <option value="All" selected>All</option>
+                        <option value="All,High">All,High</option>
+                        <option value="All,High,Medium">All,High,Medium</option>
+                        <option value="All,High,Medium,Low">All,High,Medium,Low</option>
+                        <option value="High">High</option>
+                        <option value="High,Medium">High,Medium</option>
+                        <option value="High,Medium,Low">High,Medium,Low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Medium,Low">Medium,Low</option>
+                        <option value="Low">Low</option>
+                    </select>
+                </div>
+                <div class="form-group row">
+                    <label for="naics_level" class="col-sm-4 col-form-label">NAICS Level</label>
+                    <select name="naics_level" id="naics_level" class="col-sm-8 form-control" onchange="naics_level_selected()">
+                        <option value="" disabled selected>Select NAICS Level</option>
+                        {% for level in naics_data.keys %}
+                            <option value="{{level}}">{{level}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-group row" hidden id="naics_code_row">
+                    <label for="naics_codes" class="col-sm-4 col-form-label">NAICS Codes</label>
+                    <select class="col-sm-8 form-control selectpicker" data-live-search="true" data-selected-text-format="count" multiple data-actions-box="true" id="naics_codes">
+                    </select>
+                </div>
+            </div>
+            </div>
+            <div class="row m-2">
+                <div class="col-12">
+                    <input type="button" class="button float-right" value="Submit" onclick="submitform()">
+                </div>
+            </div> 
+            
+            <div id="message"></div>
+            <input hidden type="text" id="naics" name="naics">
+            <input hidden type="text" id="county" name="county">
+            <input hidden type="text" id="model" name="model">
+            {% csrf_token %}
+        </form>
+    </div>
+    <div class="task-table card">
+        <table id="predict-task-table" width="100%">
+            <thead>
+            <tr>
+                <td>
+                    ID
+                </td>
+                <td>
+                    Type
+                </td>
+                <td>
+                    NAICS Level
+                </td>
+                <td>
+                    Model
+                </td>
+                <td>
+                    County Filter
+                </td>
+                <td>
+                    NAICS Filter
+                </td>
+                <td>
+                    Date Range
+                </td>
+                <td>
+                    Process Time
+                </td>
+                <td>
+                    Status
+                </td>
+                <td>
+                    Log
+                </td>
+                <td>
+                    Evaluation
+                </td>
+            </tr>
+            </thead>
+            <tbody>
+            {% for task in task_data %}
+                <tr>
+                    <td class="task-id">
+                        {{ task.id }}
+                    </td>
+                    <td>
+                        {% if task.prediction_type == "Non-Commonwealth" %}
+                        All Industries
+                        {% else %}
+                        {{ task.prediction_type }}
+                        {% endif %}
+                        {% if task.note %}
+                            <img title="{{ task.note }}" class="icon note"
+                                 src="{% static 'prediction_module/icon/note.png' %}">
+                        {% endif %}
+                    </td>
+                    <td>{{ task.naics_level }}</td>
+                    <td>{{ task.model }}</td>
+                    <td><div style="height: 100px;width: 200px;overflow:auto;">{{ task.county }}</div></td>
+                    <td><div style="height: 100px;width: 200px;overflow:auto;">{{ task.naics }}</div></td>
+                    <td>{{ task.start_date }} <br> {{ task.end_date }}</td>
+                    <td>{{ task.process_time }}</td>
+                    <td id="status-{{ task.id }}">{{ task.status }}</td>
+                    <td>
+                        <div class='show-log button'>Show Log</div>
+                        <textarea class='log-content' hidden>{{ task.log }}</textarea>
+                        <button class="delete-btn" onclick="deleteform('{{ task.id }}')">X</button>
+                    </td>
+                    <td id="evaluation-{{ task.id }}">
+                        {% if task.status == "Successful" %}
+                        <a class="button" href="{% url 'evaluation' task.id %}" role="button" disabled="true">Evaluation</a>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div id="log-modal" class="modal">
+
+        <div class="modal-content animate">
+            <div class="imgcontainer">
+                <span onclick="$('#log-modal').css('display', 'none')" class="close" title="Close Modal">&times;</span>
+            </div>
+
+            <div class="modal-container" id="log-body">
+            </div>
+        </div>
+    </div>
+{% endblock %}

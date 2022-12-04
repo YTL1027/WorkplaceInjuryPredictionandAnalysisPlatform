@@ -1,0 +1,99 @@
+{% extends "preprocess_module/base.html" %}
+
+{% load staticfiles %}
+
+{% block header %}
+    <script src="{% static 'preprocess_module/js/upload.js' %}" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'preprocess_module/css/upload.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="upload-module card">
+        <form id="upload_neural_form" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" style="width: 100%" required>
+            <table id="neural_upload_table">
+                <tr>
+                    <td><input type="radio" name="file_type" value="Non-Commonwealth" required></td>
+                    <td>All Industries</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="radio" name="file_type" value="Commonwealth" required>
+                    </td>
+                    <td>
+                        Commonwealth
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <a href="javascript: submitNeuralForm()" id="neural-file-submit" class="button">Submit</a>
+                    </td>
+                </tr>
+            </table>
+            <div id="message"></div>
+            {% csrf_token %}
+        </form>
+    </div>
+
+    <div class="summary card" id="offwork_gap_pie_chart">
+    </div>
+</div>
+<div class="row">
+    <div class="task-table card">
+        <table id="upload-task-table" width="100%">
+            <thead>
+            <tr>
+                <td>
+                    TOP 5 injury nature
+                </td>
+                <td>
+                    NAICS
+                </td>
+                <td>
+                    POSTAL
+                </td>
+                <td>
+                    EMPL_MLNG_STATE
+                </td>
+                <td>
+                    GENDER
+                </td>
+                <td>
+                    MAR_STATUS
+                </td>
+                <td>
+                    BIRT
+                </td>
+                <td>
+                    InjuryDT
+                </td>
+                <td>
+                    INJURY_NATURE
+                </td>
+                <td>
+                    INJURY_CAUSE
+                </td>
+                <td>
+                    OCC
+                </td>
+            </tr>
+            </thead>
+            <tbody id="neural_tbody">
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div id="log-modal" class="modal">
+
+    <div class="modal-content animate">
+        <div class="imgcontainer">
+            <span onclick="$('#log-modal').css('display', 'none')" class="close" title="Close Modal">&times;</span>
+        </div>
+
+        <div class="modal-container" id="log-body">
+        </div>
+    </div>
+</div>
+{% endblock %}

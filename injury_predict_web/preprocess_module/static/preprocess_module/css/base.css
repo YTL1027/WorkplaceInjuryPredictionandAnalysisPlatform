@@ -1,0 +1,185 @@
+body {
+    background-color: #f8f9fa;
+    font-family: Montserrat, sans-serif;
+}
+
+.logo {
+    width: 50px;
+}
+
+.active {
+    font-weight: bolder;
+}
+
+.navigation * {
+    margin: 5px;
+    font-family: Montserrat, sans-serif;
+    color: #2a578d !important;
+}
+
+/*.logout {*/
+    /*right: 15px;*/
+    /*position: absolute;*/
+    /*top: 30px;*/
+/*}*/
+
+/*.admin {*/
+    /*right: 120px;*/
+    /*position: absolute;*/
+    /*top: 30px;*/
+/*}*/
+
+.container_area {
+    height: 1050px;
+    width: 100%;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -0.625rem;
+  margin-left: -0.625rem;
+}
+.card {
+    position: relative;
+    background-color: white;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px #d8d8d8;
+    margin: 25px;
+}
+
+.button {
+    background-color: #7395e5;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    white-space: nowrap;
+    padding: 5px 15px !important;
+}
+
+.delete-btn {
+    background-color: #ff5c5c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.footer-bar {
+    bottom: 0;
+}
+
+
+.modal-content * {
+    margin: 5px;
+}
+
+.modal-container {
+    padding: 16px;
+    max-height: 100%;
+    overflow: scroll;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 100%;
+    height: 500px;
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+.ui-tooltip, .arrow:after {
+    background: #f8f9fa;
+    border: 2px solid white;
+}
+
+@-webkit-keyframes animatezoom {
+    from {
+        -webkit-transform: scale(0)
+    }
+    to {
+        -webkit-transform: scale(1)
+    }
+}
+
+@keyframes animatezoom {
+    from {
+        transform: scale(0)
+    }
+    to {
+        transform: scale(1)
+    }
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+        display: block;
+        float: none;
+    }
+
+    .cancelbtn {
+        width: 100%;
+    }
+}
+
+.wide-card {
+    width: 100%;
+}
+.help-txt, p {
+    margin-left: 40px;
+}
+.help-txt, li {
+    margin-left: 40px;
+}
+.help-txt, P {
+    margin-left: 40px;
+}
+.help-txt, h2 {
+    margin-left: 20px;
+    margin-top: 20px;
+}

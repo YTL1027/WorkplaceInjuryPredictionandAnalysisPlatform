@@ -1,0 +1,13 @@
+{% extends "preprocess_module/base.html" %}
+
+{% load staticfiles %}
+
+{% block header %}
+    <script src="{% static 'prediction_module/js/prediction.js' %}" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'preprocess_module/css/base.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'prediction_module/css/report.css' %}">
+{% endblock %}
+
+{% block content %}
+<a href="{{report_id}}">Report</a>
+{% endblock %}

@@ -1,0 +1,105 @@
+.upload-module * {
+    margin: 17px;
+}
+
+.upload-module {
+    width: 100%;
+    max-width: 40%;
+    height: 360px;
+}
+
+.summary {
+    width: 100%;
+    max-width: 52%;
+    height: 360px;
+    display: block;
+}
+
+.task-table {
+    padding: 20px;
+    float: left;
+    min-width: 95%;
+}
+
+.big-col {
+    width: 300px;
+    height: 100px;
+    overflow: scroll;
+}
+
+.summary-left {
+    width: 50%;
+    float: left;
+}
+
+.summary-right {
+    width: 50%;
+    float: left;
+}
+
+.summary-card {
+    box-shadow: 0 1px 5px #d8d8d8;
+    margin: 15px;
+    width: 100%;
+    height: 60px;
+    float: left;
+
+}
+
+.summary-name {
+    float: left;
+    width: 50%;
+    height: 100%;
+    max-height: 100%;
+    font-weight: 300;
+    position: relative;
+}
+
+.center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+}
+
+.summary-data {
+    float: left;
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    line-height: 60px;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+#message {
+    position: relative;
+    bottom: 30px;
+    color: red;
+    background-color: white;
+}
+
+.disabled {
+    pointer-events: none;
+    cursor: default;
+    background-color: #afbee0;
+}
+
+.red {
+    background-color: #f88781;
+}
+
+.green {
+    background-color: #32bc9f;
+}
+
+.blue {
+    background-color: #70b3e3;
+}
+
+.yellow {
+    background-color: #ffdc68;
+}

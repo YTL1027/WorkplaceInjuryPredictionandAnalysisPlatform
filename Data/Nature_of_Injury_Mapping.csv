@@ -1,0 +1,55 @@
+﻿Code,Description,Category,Score
+1,No Physical Injury,Specific Injury,1
+2,Amputation,Specific Injury,8
+3,Angina Pectoris,Specific Injury,6
+4,Burn,Specific Injury,8
+7,Concussion,Specific Injury,4
+10,Contusion,Specific Injury,6
+13,Crushing,Specific Injury,7
+16,Dislocation,Specific Injury,7
+19,Electric Shock,Specific Injury,5
+22,Enucleation,Specific Injury,7
+25,Foreign Body,Specific Injury,5
+28,Fracture,Specific Injury,8
+30,Freezing,Specific Injury,8
+31,Hearing Loss or Impairment,Specific Injury,2
+32,Heat Prostration,Specific Injury,7
+34,Hernia,Specific Injury,6
+36,Infection,Specific Injury,4
+37,Inflammation,Specific Injury,7
+40,Laceration,Specific Injury,2
+41,Myocardial Infarction,Specific Injury,8
+42,Poisoning - General (Not OD or Cumulative Injury),Specific Injury,7
+43,Puncture,Specific Injury,4
+46,Rupture,Specific Injury,6
+47,Severance,Specific Injury,7
+49,Sprain or Tear,Specific Injury,4
+52,Strain or Tear,Specific Injury,4
+53,Syncope,Specific Injury,6
+54,Asphyxiation,Specific Injury,5
+55,Vascular,Specific Injury,7
+58,Vision Loss,Specific Injury,6
+59,"All Other Specific Injuries, NOC",Specific Injury,4
+60,"Dust Disease, NOC",Occupational Disease or Cumulative Injury,7
+61,Asbestosis,Occupational Disease or Cumulative Injury,4
+62,Back Lung,Occupational Disease or Cumulative Injury,8
+63,Byssinosis,Occupational Disease or Cumulative Injury,5
+64,Silicosis,Occupational Disease or Cumulative Injury,6
+65,Respiratory Disorders,Occupational Disease or Cumulative Injury,7
+66,"Poisoning - Chemical, (Other Than Metals)",Occupational Disease or Cumulative Injury,7
+67,Poisoning - Metal,Occupational Disease or Cumulative Injury,8
+68,Dermatitis,Occupational Disease or Cumulative Injury,6
+69,Mental Disorder,Occupational Disease or Cumulative Injury,4
+70,Radiation,Occupational Disease or Cumulative Injury,7
+71,"All Other Occupational Disease Injury, NOC",Occupational Disease or Cumulative Injury,6
+72,Loss of Hearing,Occupational Disease or Cumulative Injury,5
+73,Contagious Disease,Occupational Disease or Cumulative Injury,5
+74,Cancer,Occupational Disease or Cumulative Injury,8
+75,AIDS,Occupational Disease or Cumulative Injury,5
+76,VDT - Related Diseases,Occupational Disease or Cumulative Injury,4
+77,Mental Stress,Occupational Disease or Cumulative Injury,3
+78,Carpal Tunnel Syndrome,Occupational Disease or Cumulative Injury,6
+79,Hepatitis C,Occupational Disease or Cumulative Injury,6
+80,"All Other Cumulative Injury, NOC",Occupational Disease or Cumulative Injury,5
+90,Multiple Physical Injuries Only,Multiple Injuries,5
+91,Multiple Injuries Including Both Physical and Psychological,Multiple Injuries,5
